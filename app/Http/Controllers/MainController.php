@@ -59,7 +59,7 @@ class MainController extends Controller
             $sollution = '';
 
             switch ($operation) {
-                case 'sun':
+                case 'sum':
                     $exercise = "$number1 + $number2 =";
                     $sollution = $number1 + $number2;
                     break;
