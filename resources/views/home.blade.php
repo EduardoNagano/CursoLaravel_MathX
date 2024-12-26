@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('APP)NAME')}}</title>
+    <title>{{ env('APP)NAME') }}</title>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/png">
     <!-- bootstrap -->
@@ -69,14 +69,14 @@
 
                     <div class="mb-3">
                         <label for="number_one">Mínimo:</label>
-                        <input type="number" class="form-control" id="number_one" name="number_one" min="0" max="999"
-                            value="0">
+                        <input type="number" class="form-control" id="number_one" name="number_one" min="0"
+                            max="999" value="0">
                     </div>
 
                     <div>
                         <label for="number_two">Máximo:</label>
-                        <input type="number" class="form-control" id="number_two" name="number_two" min="0" max="999"
-                            value="100">
+                        <input type="number" class="form-control" id="number_two" name="number_two" min="0"
+                            max="999" value="100">
                     </div>
 
                 </div>
@@ -88,8 +88,8 @@
 
                     <div class="mb-3">
                         <label for="number_exercises">Número:</label>
-                        <input type="number" class="form-control" id="number_exercises" name="number_exercises" min="5"
-                            max="50" value="10">
+                        <input type="number" class="form-control" id="number_exercises" name="number_exercises"
+                            min="1" max="50" value="10">
                     </div>
 
                     <div class="text-end">
@@ -104,9 +104,21 @@
 
     </form>
 
+    {{-- validation error --}}
+    @if ($errors->any())
+        <div class="container">
+            <div class="row">
+                <div class="alert alert-danger text-center mt-3">
+                    Por favor selecione pelo menos uma operação. As parcelas dever ser números entre 0 e 999. O número de exercícios deve variar entre 5 e 50.
+                </div>
+            </div>
+        </div>
+        
+    @endif
+
     <!-- footer -->
     <footer class="text-center mt-5">
-        <p class="text-secondary">MathX &copy; <span class="text-info">{{ date("Y") }}</span></p>
+        <p class="text-secondary">MathX &copy; <span class="text-info">{{ date('Y') }}</span></p>
     </footer>
 
     <!-- bootstrap -->
