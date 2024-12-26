@@ -12,7 +12,7 @@ class MainController extends Controller
         return view('home');
     }
 
-    public function generateExercises(Request $request): void
+    public function generateExercises(Request $request): View
     {
         // Form validation
         $request->validate([
@@ -99,7 +99,7 @@ class MainController extends Controller
             ];
         }
 
-        dd($exercises);
+        return view('operations', ['exercises' => $exercises]);
     }
 
     public function printExercises(): void
